@@ -84,21 +84,28 @@ function SecondPage() {
     <div className="main-styling">
       <Container
         sx={{
+          my: "20px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginBottom: "30px",
         }}
       >
-        <Typography variant="h3">What word are you looking for?</Typography>
+        <Typography variant="h3">I am feeling...</Typography>
         <FormControl sx={{ m: 1, width: 300, mt: 3 }}>
-          <Select sx={{color: "#61dafb"}}
+          <Select
+            sx={{ color: "#61dafb" }}
             displayEmpty
             value={selectedEmotion}
             onChange={handleChange}
-            input={<OutlinedInput sx={{ "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#61dafb", // Change the color of the outline
-              }}}/>}
+            input={
+              <OutlinedInput
+                sx={{
+                  "& .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "#61dafb",
+                  },
+                }}
+              />
+            }
             MenuProps={MenuProps}
             inputProps={{ "aria-label": "Without label" }}
           >
@@ -116,14 +123,14 @@ function SecondPage() {
             ))}
           </Select>
         </FormControl>
+        <Link to="/chat">Consult an expert</Link>
         <div>
           {array.length > 0 &&
             array.map((element: any) =>
               typeof element.attributes.term === "string" &&
               typeof element.attributes.explanation == "string" &&
               typeof element.attributes.example === "string" ? (
-                <Cards 
-     
+                <Cards
                   term={element.attributes.term}
                   example={element.attributes.example}
                   explanation={element.attributes.explanation}

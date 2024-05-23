@@ -4,6 +4,7 @@ import './App.css';
 import { Route, Routes } from "react-router-dom" 
 import LandingPage from "./LandingPage"
 import SecondPage from "./SecondPage"
+import Chat from "./Chat"
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/unstuck" element={<SecondPage />} />
+      <Route path="/chat" element={<Chat />} />
     </Routes>
     </>
     // <div className="App">
